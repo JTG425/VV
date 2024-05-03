@@ -86,16 +86,18 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    font-size: 16px; 
+    font-size: 16px;
     color: var(--copy-light);
     background-color: var(--foreground);
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.radio-button:checked + .radio-label {
-    background-color: var(--primary); /* Change background color when selected */
+.radio-button:checked+.radio-label {
+    background-color: var(--primary);
+    /* Change background color when selected */
     color: var(--primary-content);
 }
+
 .submit-button {
     display: flex;
     justify-content: center;
@@ -114,9 +116,10 @@
 }
 
 .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: inherit;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
     width: fit-content;
     border: var(--border);
     padding-left: 10px;
@@ -158,6 +161,9 @@
 
     .radio-group {
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
         align-items: center;
     }
 
@@ -178,5 +184,16 @@
         font-size: 16px;
     }
 
-}
+    .voc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .vis {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
