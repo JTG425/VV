@@ -1,38 +1,83 @@
+:root {
+  --primary: rgb(169, 31, 74);
+  --primary-content: rgb(246, 209, 220);
+  --primary-dark: rgb(126, 23, 55);
+  --primary-light: rgb(212, 39, 93);
+
+  --secondary: rgb(0, 0, 0);
+  --secondary-content: rgb(128, 128, 128);
+  --secondary-dark: rgb(0, 0, 0);
+  --secondary-light: rgb(26, 26, 26);
+
+  --background: rgb(241, 239, 239);
+  --foreground: rgb(251, 251, 251);
+  --border: rgb(226, 221, 222);
+
+  --copy: rgb(41, 35, 37);
+  --copy-light: rgb(110, 94, 99);
+  --copy-lighter: rgb(149, 132, 137);
+
+  --success: rgb(31, 169, 31);
+  --warning: rgb(169, 169, 31);
+  --error: rgb(169, 31, 31);
+  --success-content: rgb(209, 246, 209);
+  --warning-content: rgb(0, 0, 0);
+  --error-content: rgb(246, 209, 209);
+}
+
+body {
+  background: var(--background);
+}
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  height: fit-content;
+  width: 100%;
   font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--background);
+  color: var(--copy);
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dashboard-groups {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+
+.group-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 150px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: var(--primary-content);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.1);
 }
