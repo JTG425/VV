@@ -6,7 +6,7 @@ import { FaPenAlt } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdSpaceDashboard } from "react-icons/md";
-import AddJudge from './adminComponents/addjudge';
+import ShowJudges from './adminComponents/showJudges';
 import ShowGroups from './adminComponents/showGroups';
 import CreateComp from './adminComponents/createComp';
 import AdminDashboard from './adminComponents/adminDash';
@@ -108,7 +108,7 @@ function Admin() {
                     </div>
                 ) : (
                     <div>
-                        <AddJudge />
+                        <ShowJudges />
                     </div>
                 )}
             </div>

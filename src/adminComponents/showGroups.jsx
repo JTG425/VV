@@ -10,8 +10,10 @@ function ShowGroups() {
 
     const createGroupVariants = {
         hidden: {
-            y: '100vw',
+            y: 100,
+            overflow: 'hidden',
             opacity: 0,
+            transition: { type: 'spring', duration: 1 }
         },
         visible: {
             y: -100,
@@ -19,12 +21,24 @@ function ShowGroups() {
             zIndex: 1,
             transition: { type: 'spring', duration: 1 }
         },
-        exit: {
-            y: '-100vw',
-            transition: { duration: 1 }
-
-        }
     };
+
+    const blurredBackground = {
+        hidden: {
+            opacity: 0,
+            display: 'none',
+            transition: {
+                duration: 0.5
+            }
+        },
+        visible: {
+            opacity: 1,
+            display: 'block',
+            transition: {
+                duration: 0.5
+            }
+        }
+    }
 
     // This Would use SQL Database
     const [groups, setGroups] = useState({
@@ -57,7 +71,7 @@ function ShowGroups() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setCreateGroup(!createGroup)}
-            >Create Group</motion.button>
+            >Add Group</motion.button>
             <motion.div
                 className='create-group-container'
                 initial='hidden'
@@ -67,6 +81,12 @@ function ShowGroups() {
             >
                 <CreateGroup closeMenu={handleCloseMenu} createGroup={handleCreateGroup} />
             </motion.div>
+            <motion.div
+                className='blurred-background'
+                initial='hidden'
+                animate={createGroup ? 'visible' : 'hidden'}
+                variants={blurredBackground}
+            ></motion.div>
             <table>
                 <thead>
                     <tr>

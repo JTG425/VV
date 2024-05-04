@@ -19,7 +19,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 3;
+    z-index: 5;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,6 +37,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.1);
+    z-index: 4;
 }
 
 .sidebar-button {
@@ -78,6 +79,36 @@
     border: var(--border);
 }
 
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: fit-content;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.admin-dashboard-widgets-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.admin-dashboard-widget {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.1);
+}
+
 .admin-create-group {
     display: flex;
     flex-direction: column;
@@ -89,16 +120,38 @@
     padding-bottom: 10px;
 }
 
+.admin-show-groups {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
 .create-group-container {
-    position: fixed;
-    width: 80vw;
-    left: 0;
     background: var(--foreground);
+    width: 90%;
+    height: fit-content;
     border-radius: 10px;
     box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.1);
     border: var(--border);
     padding: 10px;
-    z-index: -1;
+    margin-bottom: -425px;
+}
+
+.blurred-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+
 }
 
 .admin-create-group p {
@@ -122,6 +175,93 @@
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.create-group-button {
+    width: 25%;
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: var(--border);
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--primary-content);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.close-button {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px 5px 10px;
+    margin-top: 0px;
+    align-self: flex-start;
+    border: var(--border);
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--primary-content);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.create-judge-button {
+    width: fit-content;
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: var(--border);
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--primary-content);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.admin-create-judge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.admin-show-judge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.create-judge-container {
+    background: var(--foreground);
+    width: 90%;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.1);
+    border: var(--border);
+    padding: 10px;
+    margin-bottom: -350px;
+}
+
+.admin-create-judge p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 table {

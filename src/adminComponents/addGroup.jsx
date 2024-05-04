@@ -9,6 +9,14 @@ function CreateGroup(props) {
 
     return (
         <div className="admin-create-group">
+            <motion.button
+                className='close-button'
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => closeMenu()}
+            >
+                X
+            </motion.button>
             <p>Create Group</p>
             <input type="text" id='name' placeholder="Enter Group Name"></input>
             <input type="text" id='school' placeholder="Group School"></input>
